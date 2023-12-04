@@ -39,4 +39,12 @@ export class UserController {
         const user = req?.body;
         return this.userService.getUserInfo(user['user_id']);
     }
+
+    @Get('/wishlist')
+    @HttpCode(HttpStatus.OK)
+    getWishList(@Param('accessToken') accessToken: string, @Req() req: Request) {
+        return {
+            data: "My Wish List!"
+        }
+    }
 }
